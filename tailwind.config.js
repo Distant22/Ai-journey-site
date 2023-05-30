@@ -10,13 +10,14 @@ module.exports = {
       'topbar': '#D9D9D9',
       'bug': '#F2DB0A',
       'searchBox': '#EDECEB',
-      'white': '#FFFFFF'
+      'white': '#FFFFFF',
     },
     extend: {},
   },
   plugins: [
     require('flowbite/plugin'),
     require('@tailwindcss/line-clamp'),
+    require("daisyui")
   ]
 }
 

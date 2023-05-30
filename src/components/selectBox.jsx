@@ -20,15 +20,6 @@ export default function SelectBox({ onCheckboxChange }) {
           onChange={handleCheckboxChange}
         />
         <label htmlFor="site">景點</label>
-
-        <input
-          type="checkbox"
-          name="food"
-          checked={checkedBox === "food"}
-          onChange={handleCheckboxChange}
-        />
-        <label htmlFor="food">飲食</label>
-
         <input
           type="checkbox"
           name="hotel"
