@@ -45,7 +45,7 @@ export default function ChatBox({searchMsg}) {
   
   async function lateMessage(msg) {
     try {
-      const response = await fetch('http://localhost:7777', {
+      const response = await fetch('https://ai-journey-backend.onrender.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
