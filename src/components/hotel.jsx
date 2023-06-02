@@ -86,7 +86,7 @@ export default function Hotel({result}) {
             <p className="text-lg p-8 font-bold text-gray-600">載入中...</p>
         ) : (
         <ul>
-          {hotels.length === 0 && setBang ? (
+          {hotels.length === 0 && (setBang ? (
             <p class="p-8 text-2xl font-bold text-red-500">
               我們的資料庫爆了！<br />
               <p class="text-sm text-gray-500">抱歉，明天再來QQ<br />或是你可以先玩旁邊的AI小幫手功能</p>
@@ -98,7 +98,7 @@ export default function Hotel({result}) {
               1. 搜尋文字內容拼寫 <br />
               2. 網路狀態良好 <br />
             </p>
-          )}
+          ))}
           {hotels.length !== 0 &&
             <div class="flex">
               <div class=" h-[calc(172vh)] w-60 mt-12 ml-4 bg-gray-200 rounded-3xl ">

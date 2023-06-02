@@ -33,7 +33,7 @@ export default function Journey({result}) {
           <p className="text-lg p-8 font-bold text-gray-600">載入中...</p>
       ) : (
       <ul>
-        {journeys.length === 0 && setBang ? (
+        {journeys.length === 0 && (setBang ? (
             <p class="p-8 text-2xl font-bold text-red-500">
               我們的資料庫爆了！<br />
               <p class="text-sm text-gray-500">抱歉，明天再來QQ<br />或是你可以先玩旁邊的AI小幫手功能</p>
@@ -45,7 +45,7 @@ export default function Journey({result}) {
               1. 搜尋文字內容拼寫 <br />
               2. 網路狀態良好 <br />
             </p>
-        )}
+        ))}
         {journeys.map((journey,index) => (
           <div onClick={() => pullBox(index)} className={`${openBox === index ? "h-[20rem]" : "h-[10rem]"} w-1/1 duration-500 rounded-3xl bg-gray-300 my-2 mx-4 p-4 font-bold`}>
               <li key={`${journey.Id}-${journey.Name}`}>
