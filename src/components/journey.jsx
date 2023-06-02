@@ -2,103 +2,29 @@ import { useState, useEffect } from "react";
 import { getJourney } from "./getJourney";
 
 export default function Journey({result}) {
-  const [journeys, setJourneys] = useState([
-    {
-      "Id": "C1_387000000A_000531",
-      "Name": "太平古農莊文物館",
-      "Toldescribe": "太平古農莊文物館於99年10月17日開館啟用，位於車籠埔頂坪公園內，裡面陳列的臺灣古文物，乃莊主張友吉先生畢生收藏，為了讓日漸凋零的台灣文化傳承下去，讓社會大眾了解先民的智慧，忍痛捐贈給臺中市太平區公所。 文物館主體採三合院農宅式建築，館內規劃為10個主題展示區，正身部份為祖先神明廳展示區、兩邊廳舍分別為臥室、新娘嫁妝嬰兒用品房與廚灶展示區，左右護龍則以衣帽、杯盤器皿、電器、農業用具為主題的各式展品；三合院護龍展示區入口處規劃了藥鋪店與柑仔店販售部，因古文物數量繁多，採取輪展方式。 太平古農莊文物館提供民眾一處緬懷往昔民俗風情、鄉土情懷的地方，頂坪公園內種植數十棵高達十五米的楓葉樹隨著季節變換，形成不同的景致，和古色古香的文物館交織成一幅世外桃源的圖畫。對一個在農村出生長大的農家子弟來說，農家生活的點點滴滴總是交人難以忘懷，尤其是在二、三十年代的台灣社會，大家庭那種艱辛困苦、汗流浹背，從死裡活過來的日子裡。先民為了生活，更為了大家庭裡的每一張口，而無怨無悔的付出，辛勤地日出而做，只求一天三餐溫飽而已，可想而知，農業時代生活品質怎可與科技日新月異的現在比較。(本文選自太平區古農莊文物館)開放時間：週二至週日，09:00-12:00，13:00-17:00館舍地址：臺中市太平區光興路1266巷160號聯絡電話：04-22776400粉絲專頁：https://www.facebook.com/古農莊文物館-646103418770588/ 導覽解說：■有 □無 ■預約制預約電話：04-22776400以上圖片由臺中市政府文化局提供。",
-      "Description": "莊主張友吉先生為了讓社會大眾了解先民的智慧，令日漸凋零的臺灣文化傳承下去，將畢生私藏的古文物無條件捐贈給臺中市太平區公所。古色古香的文物館與周遭楓香葉色隨季節更迭交織成絢爛的景致，提供民眾一處緬懷往昔民俗風情、鄉土情懷的藝文據點。",
-      "Tel": "886-4-22776400",
-      "Add": "臺中市411太平區光興路1266巷160號",
-      "Region": "臺中市",
-      "Town": "太平區",
-      "Travellinginfo": "",
-      "Opentime": "週二至週日，09:00-12:00，13:00-17:00 (週一公休)",
-      "Picture1": "https://travel.taichung.gov.tw/content/images/attractions/32032/640x480_image637096680234631401.jpg",
-      "Picdescribe1": "古農莊照片1",
-      "Map": "",
-      "Px": 120.7424,
-      "Py": 24.11732,
-      "Parkinginfo": "",
-      "Remarks": "",
-      "Changetime": "2022-09-28T15:13:49+08:00"
-  },
-  {
-      "Id": "C1_387000000A_000533",
-      "Name": "東勢梨文化館",
-      "Toldescribe": "梨文化館位於東勢中嵙社區，是體驗東勢之旅的首站，這座館採取「有機建築」的手法，把小巧的建物自然嵌建在坡地上，紅磚與白粉牆相映襯，鋼與木構搭配，看來既現代又溫暖。一樓展示高接梨的生產過程與高接梨之父張榕生的故事；二樓是各種梨樹與產期的介紹。高接梨是由張榕生先生，將梨山新世紀梨的花芽，嫁接到平地橫山梨樹上而成，不但挽救了橫山梨的命運，也成為東勢最具代表性的產業。圖片出處：擁葉生態農場",
-      "Description": "梨文化館位於東勢中嵙社區，是體驗東勢之旅的首站，這座館採取「有機建築」的手法，把小巧的建物自然嵌建在坡地上，紅磚與白粉牆相映襯，鋼與木構搭配，看來既現代又溫暖。一樓展示高接梨的生產過程與高接梨之父張榕生的故事；二樓是各種梨樹與產期的介紹。高接梨是由張榕生先生，將梨山新世紀梨的花芽，嫁接到平地橫山梨樹上而成，不但挽救了橫山梨的命運，也成為東勢最具代表性的產業。圖片出處：擁葉生態農場",
-      "Tel": "886-4-25879586",
-      "Add": "臺中市423東勢區東崎路三段688巷168號",
-      "Region": "臺中市",
-      "Town": "東勢區",
-      "Travellinginfo": "",
-      "Opentime": "二~日 8:00~18:00   (週一公休)",
-      "Picture1": "https://travel.taichung.gov.tw/content/images/attractions/51320/640x480_image637756097804509080.jpg",
-      "Picdescribe1": "擁葉生態農場FB",
-      "Map": "",
-      "Px": 120.86405,
-      "Py": 24.27138,
-      "Parkinginfo": "",
-      "Remarks": "",
-      "Changetime": "2021-12-20T15:10:09+08:00"
-  },
-  {
-      "Id": "C1_387000000A_000534",
-      "Name": "張連昌薩克斯風博物館",
-      "Toldescribe": "玩賞攻略◼️薩克斯風收藏◼️參觀工廠專業製程與精密技術 館內展出張連昌先生的歷史文物，並提供文化導覽，紀錄台灣薩克斯風故事與訴說張連昌先生精神，並珍藏發明人阿道夫．薩克斯先生所打造，距今163年歷史的薩克斯風。    2010年榮獲經濟部評選「優良觀光工廠」。開放參觀工廠專業製程與精密技術，吸引眾多國內外人士、團體參觀，並定期舉辦薩克斯風大師講座、專業樂團樂手演奏會，展演宣講及學術研討發表會。 「張連昌薩克斯風」將這六十五年的事業朝百年企業的願景前進，不斷的成長與發展，成為永續經營的企業，為社會發展貢獻一己之力。家庭成長背景張連昌先生，西元1913年12月10日生，家中排行第五，出身務農的家庭，世居后里墩西村。21歲與胡屘女士結婚，婚後育有2子4女，以繪圖為業，為逃避日本軍伕之徵召，流浪外鄉以演奏為業。台灣光復後，32歲投入樂器製作，35歲製出作全台灣第一支薩克斯風，開啟台灣薩克斯風故鄉的傳奇。連昌先生卒於西元 1986年1月，享年73歲。學畫之路、美感淬煉張連昌先生從小對藝術展露極高興趣與天份，不受當時男丁需務農之禮俗束縛而熱衷繪畫。13歲遂跟隨住於大甲的中國大陸唐山師傅專研工筆畫與裱褙。爾後赴台北接受嚴謹的繪畫訓練，回鄉後並以此為業。這些歷練讓連昌先生的美學有著更 深的感官淬練與積累，亦培養出專注與堅持的毅力。悠遊音樂，沉浸音符魅力世界年輕時的張連昌先生擅長舞文弄墨，愛好音樂。他跟著人稱「黑印度」，真名已不復記憶的鄉人學習吹奏小喇叭和薩克斯風，從此醉心樂器演奏。西元1945年連昌先生與地方上一群喜好音樂的當地士紳組成Jazz Band輕音樂團。團員們都具深厚的樂理基礎和嫻熟的演奏技巧，南北演出造成轟動，名傳四方。爾後，連昌先生在製作樂器之餘也教導工廠裡的學徒吹奏樂器，部分學徒轉向張基盤先生研習專業演奏。隨著電視台開播，電視台的樂團樂師大多來自后里，「后里出樂師」口碑也不逕而傳！",
-      "Description": "進入張連昌薩克斯風博物館，彷彿進入一座美麗又有著動人故事的音樂殿堂。耳際傳來鏗鏘有序的節奏，引領一窺精湛工法，耀眼奪目的薩克斯風反覆流串在師傅的手指間，得使專業音樂人奏出美妙的樂音。一旁的舞台佔據了所有的目光，只因恣意放肆的樂手。我們孜孜不倦的創造愉悅聲，在意您對樂器的苛求，希望帶給您生命中難忘的音樂旅程。",
-      "Tel": "886-4-25578989",
-      "Add": "臺中市421后里區公安路330-1 號",
-      "Region": "臺中市",
-      "Town": "后里區",
-      "Travellinginfo": "至豐原火車站前方搭乘豐原客運(往大甲車班)，松鶴酒莊(或后里國中)下車，步行約五分鐘即可到達本館。",
-      "Opentime": "9:00-17:00",
-      "Picture1": "https://travel.taichung.gov.tw/content/images/attractions/27668/640x480_image636762635248534790.jpg",
-      "Picdescribe1": "張連昌薩克斯風博物館-薩克斯風",
-      "Map": "",
-      "Px": 120.69458,
-      "Py": 24.31239,
-      "Parkinginfo": "",
-      "Remarks": "",
-      "Changetime": "2021-08-13T16:01:58+08:00"
-  },
-  {
-      "Id": "C1_387000000A_000535",
-      "Name": "霧峰菇類產學館",
-      "Toldescribe": "霧峰區農會於1998年時打造佔地400坪的霧峰菇類博物館，是台灣唯一世界「唯二」的菇類博物館（另一處在荷蘭），對全世界的菇類（尤其是台灣菇種）作了詳細的介紹，是一處珍貴的知識寶地。自1953年台灣首顆洋菇於農試所(台灣省農業試驗所)成功栽培出時，50年代初，霧峰區便在全台菇業經濟中獨占鰲頭，加上政府相關機關相助，使得霧峰成為名副其實的「菇類王國」。2022年在霧峰區農會黃景建總幹事努力規劃與爭取下，得到行政院農業委員會及台中市政府大力支持，並結合農試所、中興大學、亞洲大學、朝陽大學、科博館、台灣菇菌專家學者及台灣菇菌產業業者等眾人協助下，將該館重新改造並賦予其發展霧峰菇菌產業鏈之功能，重新命名為【霧峰菇類產學館】。農會內還有位於四樓設置一處【台灣農漁業物產館】，提供由台灣在地優質菇蕈製成生技產品、文創品及各項生活應用商品讓民眾更能了解產業發展趨勢，該館更有結合台灣農漁會推出在地優質農(特)產品精品組合，讓民眾有豐富菇類知識之旅外還可一次購足台灣優質農(特)產品。預約方式1、接受洽詢相關事宜，於每週二至週日上午9：00&mdash;下午4：30，星期一為公休日，恕無受理。2、服務專線： 04-23336765  或  04-23303171轉293以上圖文取自霧峰區農會。",
-      "Description": "霧峰區是台灣菇類的最大生產地，這裡四季盛產各種食用菇類，尤其金菇不僅品質達國際水準之上，而且有世界最大規模的生產場，所以霧峰區是台灣菇類的最大生產地，這裡四季盛產各種食用菇類。霧峰區是台灣菇類的最大生產地，這裡四季盛產各種食用菇類，尤其金菇不僅品質達國際水準之上，而且有世界最大規模的生產場，所以霧峰區是台灣菇類的最大生產地，這裡四季盛產各種食用菇類。霧峰區是台灣菇類的最大生產地，這裡四季盛產各種食用菇類，尤其金菇不僅品質達國際水準之上，而且有世界最大規模的生產場，所以霧峰區是台灣菇類的最大生產地，這裡四季盛產各種食用菇類。霧峰區是台灣菇類的最大生產地，這裡四季盛產各種食用菇類，尤其金菇不僅品質達國際水準之上，而且有世界最大規模的生產場，所以霧峰區是台灣菇類的最大生產地，這裡四季盛產各種食用菇類。霧峰區是台灣菇類的最大生產地，這裡四季盛產各種食用菇類，尤其金菇不僅品質達國際水準之上，而且有世界最大規模的生產場，所以霧峰區是台灣菇類的最大生產地，這裡四季盛產各種食用菇類。霧峰區是台灣菇類的最大生產地，這裡四季盛產各種食用菇類，尤其金菇不僅品質達國際水準之上，而且有世界最大規模的生產場，所以霧峰區是台灣菇類的最大生產地，這裡四季盛產各種食用菇類。",
-      "Tel": "886-4-23336765",
-      "Add": "臺中市413霧峰區中正村四德路10號（霧峰鄉農會六樓）",
-      "Region": "臺中市",
-      "Town": "霧峰區",
-      "Travellinginfo": "",
-      "Opentime": "詳見官網或電話洽詢",
-      "Picture1": "https://travel.taichung.gov.tw/content/images/attractions/56613/640x480_attractions-image-m3a4bcfrhec5fjcnbqriyw.jpg",
-      "Picdescribe1": "菇類產學館",
-      "Map": "",
-      "Px": 120.69806,
-      "Py": 24.06488,
-      "Parkinginfo": "",
-      "Remarks": "",
-      "Changetime": "2023-01-16T13:51:17+08:00"
-  },
-  ]);
+  const [journeys, setJourneys] = useState([]);
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [openBox, setOpenBox] = useState(null);
+  const [bang, setBang] = useState(false);
   const pullBox = (num) => {
     setOpenBox(num)
   }
 
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     const journeyList = await getJourney(result);
-  //     setJourneys(journeyList);
-  //     setIsLoading(false);
-  //   }
-  //   fetchData();
-  // });
+  useEffect(() => {
+    async function fetchData() {
+      try{
+        const journeyList = await getJourney(result);
+        setJourneys(journeyList);
+        setIsLoading(false);
+      } catch (FirebaseError){
+        console.log("錯誤：",FirebaseError)
+        setBang(true);
+        setIsLoading(false);
+      }
+    }
+    fetchData();
+  });
 
 
   return (
@@ -107,34 +33,38 @@ export default function Journey({result}) {
           <p className="text-lg p-8 font-bold text-gray-600">載入中...</p>
       ) : (
       <ul>
-        {journeys.length === 0 && 
+        {journeys.length === 0 && setBang ? (
+            <p class="p-8 text-2xl font-bold text-red-500">
+              我們的資料庫爆了！<br />
+              <p class="text-sm text-gray-500">抱歉，明天再來QQ<br />或是你可以先玩旁邊的AI小幫手功能</p>
+            </p>
+          ):(
             <p class="p-8 font-bold text-gray-600">
               找不到結果QQ<br /><br />
               請確認以下內容是否設定正確：<br/>
-              1. 將「台」替換為「臺」字。 Ex：臺南市 <br />
-              2. 時間設定正確 <br />
-              3. 網路狀態良好
+              1. 搜尋文字內容拼寫 <br />
+              2. 網路狀態良好 <br />
             </p>
-        }
+        )}
         {journeys.map((journey,index) => (
           <div onClick={() => pullBox(index)} className={`${openBox === index ? "h-[20rem]" : "h-[10rem]"} w-1/1 duration-500 rounded-3xl bg-gray-300 my-2 mx-4 p-4 font-bold`}>
               <li key={`${journey.Id}-${journey.Name}`}>
                   { journey.Picture1 !== "" &&
                   <>
-                    <div className="flex">
+                    <div className="flex h-full items-center">
                       <div className="flex">
                         <img alt="journey-pic" src={journey.Picture1} className="h-[8rem] w-[12rem] rounded-2xl"></img>
                       </div>
-                      <div className="w-full ml-4">
-                        <div className="text-lg">{journey.Name}</div>
-                        <div className="text-sm text-gray-600">{journey.Add}</div>
-                        <div className="line-clamp-2 mt-1">{journey.Toldescribe}</div>
+                      <div className="w-full ml-4 h-full">
+                        <div className="text-xl">{journey.Name}</div>
+                        {/* <div className="text-sm text-gray-600">{journey.Add}</div> */}
+                        <div className="line-clamp-2 mt-1 text-md text-gray-500">{journey.Toldescribe}</div>
                       </div>
                     </div>
                     { openBox === index ? 
                       <p class="font-bold p-4 flex flex-col h-[9rem] w-full bg-white my-4 rounded-xl overflow-y-scroll">
                         <p class="text-lg">景點介紹</p>
-                        <p class="text-gray-600">{journey.Description}</p>
+                        <p class="text-gray-600">{journey.Toldescribe}</p>
                       </p> 
                     : <></> }
                   </>

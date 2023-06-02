@@ -4,6 +4,7 @@ import user from "../user.png";
 
 export default function ChatBox({searchMsg}) {
   const [currentText, setCurrentText] = useState("");
+  const [err, setErr] = useState(false);
   const starterMsg = [
     {
       name: '小幫手',
@@ -17,9 +18,9 @@ export default function ChatBox({searchMsg}) {
     if (isFirstRender.current && searchMsg !== undefined) {
       isFirstRender.current = false;
       handleMessage('您好，我想要尋找有關'+searchMsg.message+"的資訊，預計出發日期是"+parseInt(searchMsg.startDate.getYear()+1900)+"年的"+(parseInt(searchMsg.startDate.getMonth()+1))+"月"+searchMsg.startDate.getDate()+"號，返家日期是"+
-      parseInt(searchMsg.endDate.getYear()+1900)+"年的"+(parseInt(searchMsg.endDate.getMonth())+1)+"月"+searchMsg.endDate.getDate()+"號；如果要去那邊旅遊，你有什麼建議嗎？");
+      parseInt(searchMsg.endDate.getYear()+1900)+"年的"+(parseInt(searchMsg.endDate.getMonth())+1)+"月"+searchMsg.endDate.getDate()+"號；如果要去台北市的那邊旅遊，可以告訴我必須隨身攜帶的物品以及注意事項有什麼嗎？");
     }
-  }, []);
+  });
 
   const handleMessage = async (msg) => {
 
@@ -28,15 +29,23 @@ export default function ChatBox({searchMsg}) {
         message: msg,
       }]);
 
+      const tempMsg = [...message, {
+        name: '',
+        message: msg,
+      }]
+
       try {
+        setMessage(prevMsg => [...prevMsg, { name: '小幫手', message: "輸入中..." }]);
         const response = await lateMessage(msg);
+        setMessage(tempMsg)
         setMessage(prevMsg => [...prevMsg, { name: '小幫手', message: response.message }]);
         // Process the response received from the backend
         console.log(response);
         // Do something with the response
       } catch (error) {
         // Handle any errors that occurred during the request
-        console.error(error);
+        setMessage(tempMsg)
+        setMessage(prevMsg => [...prevMsg, { name: '小幫手', message: "伺服器錯誤，請重新整理！" }]);
         // Handle the error gracefully
       }
     
@@ -45,6 +54,7 @@ export default function ChatBox({searchMsg}) {
   
   async function lateMessage(msg) {
     try {
+      // const response = await fetch('http://localhost:7777', {
       const response = await fetch('https://ai-journey-backend.onrender.com', {
         method: 'POST',
         headers: {
@@ -90,9 +100,8 @@ export default function ChatBox({searchMsg}) {
             </div>
             <div className="chat-header">
               {msg.name}
-              {/* <time className="text-xs opacity-50 ml-2">{index < 7 ? "2 小時前" : "剛剛"}</time> */}
             </div>
-            <div className={`${msg.name === '' ? "chat-bubble chat-bubble-success whitespace-pre-line" : "chat-bubble"}`}>{msg.message}</div>
+            <div className={`${msg.name === '' ? "chat-bubble chat-bubble-success whitespace-pre-line" : msg.message === '伺服器錯誤，請重新整理！' ? "chat-bubble chat-bubble-error" : "chat-bubble"}`}>{msg.message}</div>
             <div className="chat-footer opacity-50">
               {msg.name === '' ? "已讀" : ""}
             </div>

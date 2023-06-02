@@ -68,7 +68,7 @@ export default function SearchBox() {
                         <input
                             type="text" 
                             class="w-full h-full bg-white rounded-full px-8 font-bold border-transparent"
-                            placeholder="請輸入縣市（要輸入「臺」而不是「台」！）"
+                            placeholder="請輸入台北的景點/旅館名稱"
                             onChange={handleChange}
                             checked={modal}
                             value={message}
@@ -84,12 +84,6 @@ export default function SearchBox() {
                         { (isChooseEndDate) ? (endDate.getFullYear() + "/" + (parseInt(endDate.getMonth())+1).toString() + "/" + endDate.getDate()) : "結束日" }
                         </button>
                     </div>
-                    {/* <Route render={isAdmin ? (
-                        <Redirect to='/confirm' />
-                    ) : (
-                            <NotFound />
-                        )
-                    } /> */}
                     <div class="flex w-full h-1/4 items-center">
                         <button
                             onClick={handleSearch}
@@ -97,9 +91,6 @@ export default function SearchBox() {
                         >
                             <p className="text-white text-xl font-xl">Search</p>
                         </button>
-                        {/* <Link to={{pathname: '/search'}} state={{ message }}  class="w-full h-full bg-black rounded-3xl px-8 font-bold border-transparent flex justify-center items-center">
-                            <p class="text-white text-xl font-xl">Search</p>
-                        </Link> */}
                     </div>
                 </div>
             </div>
