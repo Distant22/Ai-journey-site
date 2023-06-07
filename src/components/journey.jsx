@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getJourney } from "./getJourney";
+import { BsFillBookmarkFill } from 'react-icons/bs';
 
 export default function Journey({result}) {
   const [journeys, setJourneys] = useState([]);

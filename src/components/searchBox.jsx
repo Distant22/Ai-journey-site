@@ -11,6 +11,11 @@ export default function SearchBox() {
         setMessage(event.target.value);
     };
 
+    const [message2, setMessage2] = useState('');
+    const handleChange2 = event => {
+        setMessage2(event.target.value);
+    };
+
     const [startDate, setStartDate] = useState(new Date());
     const [isOpenStart, setIsOpenStart] = useState(false);
 
@@ -118,9 +123,9 @@ export default function SearchBox() {
                             type="text" 
                             class="w-[49%] h-full bg-white rounded-full px-8 font-bold border-transparent"
                             placeholder="2位成人 ‧ 0位孩童 ‧ 1間房"
-                            onChange={handleChange}
+                            onChange={handleChange2}
                             checked={modal}
-                            value={message}
+                            value={message2}
                         />
                         <button
                             onClick={handleSearch}
