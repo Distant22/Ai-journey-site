@@ -15,7 +15,8 @@ export default function Root() {
 
 
   const handleLogin = () => {
-      setModal(true)
+    setIsLogin(true)
+    setModal(true)
   }
 
   const result = useLocation();
@@ -62,6 +63,9 @@ export default function Root() {
               <div class="h-[85%] w-2/3 bg-searchBox rounded-xl p-8 font-bold text-base flex flex-col space-y-4">
                 <p class="text-2xl">Tourist</p>
                 <p>ID：30482340</p>
+                <div onClick={() => [setIsLogin(false),setModal(!modal)]} class="h-full w-full flex items-end justify-end p-4">
+                  <p class="btn w-[6rem]">登出</p>
+                </div>
               </div>
             </div>
           ) : (
@@ -86,9 +90,9 @@ export default function Root() {
           )}
           
           <input type="checkbox" id="errorModal" className="modal-toggle" checked={modal} />
-            <label onClick={() => [setModal(!modal),setIsLogin(true)]} className="modal cursor-pointer">
+            <label onClick={() => [setModal(!modal)]} className="modal cursor-pointer">
             <label className="modal-box max-w-[25%] h-[15%] font-bold space-y-4 flex justify-center items-center">
-                <p class="text-lg">登入成功！</p>
+                <p class="text-lg">{ isLogin ? '登入成功！' : '登出成功！'}</p>
             </label>
           </label>
       </>

@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { getJourney } from "./getJourney";
-import { BsFillBookmarkFill } from 'react-icons/bs';
+import { BsFillBookmarkFill, BsBookmark } from 'react-icons/bs';
 
 export default function Journey({result}) {
   const [journeys, setJourneys] = useState([]);
-
+  const [mark, setMark] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [openBox, setOpenBox] = useState(null);
   const [bang, setBang] = useState(false);
@@ -14,14 +14,16 @@ export default function Journey({result}) {
 
   useEffect(() => {
     async function fetchData() {
-      try{
-        const journeyList = await getJourney(result);
-        setJourneys(journeyList);
-        setIsLoading(false);
-      } catch (FirebaseError){
-        console.log("錯誤：",FirebaseError)
-        setBang(true);
-        setIsLoading(false);
+      if(journeys.length === 0 && isLoading){
+        try{
+            const journeyList = await getJourney(result);
+            setJourneys(journeyList);
+            setIsLoading(false);
+        } catch (FirebaseError){
+          console.log("錯誤：",FirebaseError)
+          setBang(true);
+          setIsLoading(false);
+        }
       }
     }
     fetchData();
@@ -52,11 +54,14 @@ export default function Journey({result}) {
               <li key={`${journey.Id}-${journey.Name}`}>
                   { journey.Picture1 !== "" &&
                   <>
-                    <div className="flex h-full items-center">
+                    <div className="flex h-full items-start">
                       <div className="flex">
                         <img alt="journey-pic" src={journey.Picture1} className="h-[8rem] w-[12rem] rounded-2xl"></img>
                       </div>
-                      <div className="w-full ml-4 h-full">
+                      <div className="w-full ml-4 h-[6rem]">
+                        <div class="w-full h-[1.5rem] flex justify-end">
+                          <p onClick={() => setMark(arr => [...arr, index])}>{ mark.includes(index) ? <BsFillBookmarkFill /> : <BsBookmark />}</p>
+                        </div>
                         <div className="text-xl">{journey.Name}</div>
                         {/* <div className="text-sm text-gray-600">{journey.Add}</div> */}
                         <div className="line-clamp-2 mt-1 text-md text-gray-500">{journey.Toldescribe}</div>

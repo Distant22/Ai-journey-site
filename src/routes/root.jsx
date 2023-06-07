@@ -44,6 +44,9 @@ export default function Root() {
                 <div class="h-[85%] w-2/3 bg-searchBox rounded-xl p-8 font-bold text-base flex flex-col space-y-4">
                   <p class="text-2xl">Tourist</p>
                   <p>ID：30482340</p>
+                  <div class="h-full w-full flex items-end justify-end p-4">
+                    <p class="btn w-[6rem]">登出</p>
+                  </div>
                 </div>
               </div>
             ) : (
