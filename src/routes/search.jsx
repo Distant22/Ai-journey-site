@@ -35,7 +35,7 @@ export default function Root() {
             <Hotel result={result.state.message} />
           )}
         </>
-      ) : (
+      ) : num === 1 ? (
         <div class="bg-white">
           <div class="h-[calc(100vh-8rem)] w-full items-center justify-center flex">
             <div class="h-[85%] w-3/4 bg-searchBox rounded-xl p-8">
@@ -45,6 +45,10 @@ export default function Root() {
             </div>
           </div>
         </div>
+      ) : num === 2 ? (
+        <>收藏頁</>
+      ) : (
+        <>登入</>
       )}
     </div>
   );

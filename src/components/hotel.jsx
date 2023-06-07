@@ -34,7 +34,7 @@ export default function Hotel({result}) {
     };
 
     const handleHotelTypeBoxChange = (e) => {
-      setIsLoading(true)
+      // setIsLoading(true)
       const { name } = e.target;
       let hotelType;
     
@@ -61,20 +61,24 @@ export default function Hotel({result}) {
     useEffect(() => {
       async function fetchData() {
         try{
-          let hotelList;
-          if (hotelTypeBox) {
-            hotelList = await getTypeHotel(result, hotelTypeBox);
-          } else {
-            hotelList = await getHotel(result);
+          if(hotels.length === 0 && isLoading){
+            let hotelList;
+            if (hotelTypeBox) {
+              console.log("It's changing!")
+              hotelList = await getTypeHotel(result, hotelTypeBox);
+              console.log("changeBox:",hotelList)
+            } else {
+              console.log("initial:",hotelList)
+              hotelList = await getHotel(result);
+            }
+            setHotels(hotelList);
+            setIsLoading(false);
           }
-          setHotels(hotelList);
-          setIsLoading(false);
         } catch (FirebaseError){
           console.log("錯誤：",FirebaseError)
           setBang(true);
           setIsLoading(false);
         }
-        
       }
       fetchData();
     });
