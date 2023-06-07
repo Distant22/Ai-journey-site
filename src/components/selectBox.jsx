@@ -1,8 +1,9 @@
 import { useState } from "react";
 
 export default function SelectBox({ onCheckboxChange }) {
-  const [checkedBox, setCheckedBox] = useState("site");
 
+  // 用CheckBox確認使用者想搜尋的結果為飯店 or 景點
+  const [checkedBox, setCheckedBox] = useState("site");
   const handleCheckboxChange = (e) => {
     const { name } = e.target;
 

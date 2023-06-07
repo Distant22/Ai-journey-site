@@ -6,64 +6,63 @@ import "react-datepicker/dist/react-datepicker.css";
 export default function SearchBox() {
     
     const navigate = useNavigate();
+
+    // 處理台北景點輸入
     const [message, setMessage] = useState('');
     const handleChange = event => {
         setMessage(event.target.value);
     };
-
+    // 處理家庭、小孩需求輸入
     const [message2, setMessage2] = useState('');
     const handleChange2 = event => {
         setMessage2(event.target.value);
     };
-
+    // 處理出發時間
     const [startDate, setStartDate] = useState(new Date());
     const [isOpenStart, setIsOpenStart] = useState(false);
-
+    // 處理抵達時間
     const [endDate, setEndDate] = useState(new Date());
     const [isOpenEnd, setIsOpenEnd] = useState(false);
-
+    // 偵測是否已選擇出發 / 抵達時間
     const[isChooseStartDate, setIsChooseStartDate] = useState(false);
     const[isChooseEndDate, setIsChooseEndDate] = useState(false);
-
+    // 處理搜尋結果未填寫完整的跳出視窗
     const[modal, setModal] = useState(false);
-
+    // 出發時間日歷開啟
+    const handleStartClick = (e) => {
+        e.preventDefault();
+        setIsOpenStart(!isOpenStart);
+    };
+    // 出發時間日歷關閉
     const handleStartChange = (e) => {
         setIsOpenStart(!isOpenStart);
         setStartDate(e);
         setIsChooseStartDate(true);
     };
+    // 抵達時間日歷開啟
+    const handleEndClick = (e) => {
+        e.preventDefault();
+        setIsOpenEnd(!isOpenEnd);
+    };
+    // 抵達時間日歷關閉
     const handleEndChange = (e) => {
         setIsOpenEnd(!isOpenEnd);
         setEndDate(e);
         setIsChooseEndDate(true);
     };
-    const handleStartClick = (e) => {
-        e.preventDefault();
-        setIsOpenStart(!isOpenStart);
-    };
-    const handleEndClick = (e) => {
-        e.preventDefault();
-        setIsOpenEnd(!isOpenEnd);
-    };
-
-    // Select Box
+    // 選擇旅遊風格、旅伴類型
     const [defaultValue1, setDefaultValue1] = useState("");
     const [defaultValue2, setDefaultValue2] = useState("");
-
+    // 若填寫不完整，跑出報錯視窗
     const handleSearch = () => {
-
         if (endDate > startDate && message !== "" && defaultValue1 !== "" && defaultValue2 !== "") {
             // Redirect to the new page with state.message
             navigate('/search', { state: { message, startDate, endDate }});
         } else {
-            // Show the error modal
-            // Implement your error modal logic here
             handleModal()
-            console.log(startDate, endDate, new Date())
-            console.log('Search not allowed!');
         }
     }
-
+    // 打開報錯視窗
     const handleModal = () => {
         setModal(true)
     }

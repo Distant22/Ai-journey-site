@@ -7,8 +7,9 @@ import { IconContext } from "react-icons";
 
 export default function TopBar({onPageChange}) {
 
+    // 選擇目前頁面
     const [page, setPage] = useState(0);
-
+    // 處理頁面改變函式
     const handlePage = (num) => {
       setPage(num)
       onPageChange(num)
@@ -26,8 +27,6 @@ export default function TopBar({onPageChange}) {
             <div onClick={() => handlePage(0)} class={`${page === 0 ? "text-yellow-300" : ""} duration-300 absolute top-16 right-[10%]`}><BiSearch /></div>
             <div onClick={() => handlePage(1)} class={`${page === 1 ? "text-yellow-300" : ""} duration-300 absolute top-16 right-[5%]`}><FaRobot /></div>
           </IconContext.Provider>
-          {/* <p onClick={handlePage} class={`cursor-pointer font-bold text-xl w-[12rem] h-full mb-4 flex items-end justify-end ${page === 0 ? "text-yellow-300 duration-300" : ""}`}>搜尋</p>
-          <p onClick={handlePage} class={`cursor-pointer font-bold text-xl w-[12rem] h-full mb-4 flex items-end justify-end ${page === 1 ? "text-yellow-300 duration-300" : ""}`}>AI聊天機器人</p> */}
         </div>
       </>
     );

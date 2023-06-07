@@ -3,15 +3,21 @@ import { getJourney } from "./getJourney";
 import { BsFillBookmarkFill, BsBookmark } from 'react-icons/bs';
 
 export default function Journey({result}) {
+
+  // 儲存景點搜尋結果
   const [journeys, setJourneys] = useState([]);
-  const [mark, setMark] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [openBox, setOpenBox] = useState(null);
+  // 處理報錯訊息
   const [bang, setBang] = useState(false);
+  // 處理景點詳細資訊展開
+  const [mark, setMark] = useState([]);
+  const [openBox, setOpenBox] = useState(null);
+  // 景點資訊展開函式
   const pullBox = (num) => {
     setOpenBox(num)
   }
-
+  
+  // 去Firebase要資料
   useEffect(() => {
     async function fetchData() {
       if(journeys.length === 0 && isLoading){

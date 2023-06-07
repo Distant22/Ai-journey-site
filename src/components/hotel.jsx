@@ -5,20 +5,22 @@ import { IconContext } from "react-icons";
 
 export default function Hotel({result}) {
 
+    // 儲存旅館搜尋結果
     const [hotels, setHotels] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [bang, setBang] = useState(false);
 
+    // 處理報錯訊息
+    const [bang, setBang] = useState(false);
     // 處理住宿型態改變
     const [hotelTypeBox, setHotelTypeBox] = useState("");
     // 處理服務改變
     const [serviceBox, setServiceBox] = useState("");
-    // 價格改變
+    // 處理價格改變
     const [price, setPrice] = useState(3000);
-    // 等級改變
+    // 處理星級改變
     const [stars, setStars] = useState([<AiOutlineStar />,<AiOutlineStar />,<AiOutlineStar />,<AiOutlineStar />]);
     const [starFill, setStarFill] = useState([false,false,false,false])
-
+    // 處理飯店星級圖示
     const handleStarFill = (num) => {
       let newArr = [];
       for (let i = 0; i < starFill.length; i++) {
@@ -27,12 +29,13 @@ export default function Hotel({result}) {
       setStarFill(newArr);
     };
     
-
+    // 處理價格範圍
     const handleSliderChange = (event) => {
       const newValue = parseInt(event.target.value);
       setPrice(newValue);
     };
 
+    // 處理住宿類型；未完成
     const handleHotelTypeBoxChange = (e) => {
       // setIsLoading(true)
       const { name } = e.target;
@@ -58,6 +61,7 @@ export default function Hotel({result}) {
       setHotelTypeBox(hotelType);
     };
 
+    // 去Firebase要資料
     useEffect(() => {
       async function fetchData() {
         try{

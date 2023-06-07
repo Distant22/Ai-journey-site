@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import bot from "../bot.png";
 import user from "../user.png";
 
+// ChatBox.jsx：AI旅遊小幫手，透過串接OpenAI API將Chat Model放進來我們的網站。
+// Model：text-davinci-003
 export default function ChatBox({searchMsg}) {
   const [currentText, setCurrentText] = useState("");
   const [err, setErr] = useState(false);
@@ -14,6 +16,7 @@ export default function ChatBox({searchMsg}) {
   const [message, setMessage] = useState(starterMsg);
   const isFirstRender = useRef(true);
 
+  // 若使用者在已輸入搜尋內容的情況下進入小幫手頁面，則新增預設訊息
   useEffect(() => {
     if (isFirstRender.current && searchMsg !== undefined) {
       isFirstRender.current = false;
@@ -22,6 +25,7 @@ export default function ChatBox({searchMsg}) {
     }
   });
 
+  // 當使用者輸入內容時，呼叫API並更新訊息結果
   const handleMessage = async (msg) => {
 
       setMessage([...message, {
@@ -52,9 +56,9 @@ export default function ChatBox({searchMsg}) {
     
   };
   
+  // Call API
   async function lateMessage(msg) {
     try {
-      // const response = await fetch('http://localhost:7777', {
       const response = await fetch('https://ai-journey-backend.onrender.com', {
         method: 'POST',
         headers: {
@@ -74,15 +78,8 @@ export default function ChatBox({searchMsg}) {
     }
   }  
 
-
-  // const lateMessage = () => {
-  //   setTimeout(() => {
-  //     setMessage(prevMsg => [...prevMsg, { name: '小幫手', message: '祝你有個開心的一天～' }]);
-  //   }, 1000);
-  // };
-
+  // 讓聊天室能夠每次留言後都自動置底
   const chatContainerRef = useRef(null);
-
   useEffect(() => {
     const chatContainer = chatContainerRef.current;
     chatContainer.scrollTop = chatContainer.scrollHeight;
