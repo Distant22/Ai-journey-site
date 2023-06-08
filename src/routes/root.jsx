@@ -74,11 +74,11 @@ export default function Root() {
                 <div class="h-[85%] w-1/3 bg-searchBox rounded-xl p-8 font-bold text-base flex flex-col items-center justify-center space-y-8">
                   <p class="text-xl">{ register ? "註冊" : "登入"}</p>
                   <input 
-                    class="w-full h-[3rem] bg-white rounded-full px-8 font-bold border-transparent"
+                    class="w-full h-[3rem] min-h-[3rem] bg-white rounded-full px-8 font-bold border-transparent"
                     placeholder="帳號"
                   />
                   <input 
-                    class="w-full h-[3rem] bg-white rounded-full px-8 font-bold border-transparent"
+                    class="w-full h-[3rem] min-h-[3rem] bg-white rounded-full px-8 font-bold border-transparent"
                     placeholder="密碼"
                     type="password"
                   />
