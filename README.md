@@ -1,70 +1,22 @@
-# Getting Started with Create React App
+# AI旅遊網站 — 前端
+<img width="960" alt="image" src="https://github.com/Distant22/Ai-journey-site/assets/82443036/54644400-cfe9-4a47-985b-2459c7d73a7e">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**網址：https://nccudct-team6.netlify.app/**
+**技術：React.js / Firebase / TailwindCss / DaisyUI**
+## **一應具全的一站式旅遊網站！**
+### **查詢住宿**
+<img width="931" alt="image" src="https://github.com/Distant22/Ai-journey-site/assets/82443036/36a79a79-8bbb-45d3-aae8-927c68115927">
+<img width="893" alt="image" src="https://github.com/Distant22/Ai-journey-site/assets/82443036/ae32fc82-dd7d-426d-b26e-37adf92eee7f">
 
-## Available Scripts
+### **查詢景點**
+<img width="945" alt="image" src="https://github.com/Distant22/Ai-journey-site/assets/82443036/a17b99d6-75df-4a7f-8bef-2267548be1ca">
+<img width="936" alt="image" src="https://github.com/Distant22/Ai-journey-site/assets/82443036/b023d6cf-835d-4541-9fce-5d60b6a43513">
 
-In the project directory, you can run:
+### **詢問小幫手**
+<img width="949" alt="image" src="https://github.com/Distant22/Ai-journey-site/assets/82443036/fc3b4f6f-dae5-4ea6-8961-7880b5265f59">
+<img width="728" alt="image" src="https://github.com/Distant22/Ai-journey-site/assets/82443036/4b93474b-38d3-44a5-bc02-1d3d988438d1">
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### **登入與收藏功能**
+<img width="331" alt="image" src="https://github.com/Distant22/Ai-journey-site/assets/82443036/5f3306bf-3892-4cda-80e3-b8ab6fe6ee1b">
+<img width="650" alt="image" src="https://github.com/Distant22/Ai-journey-site/assets/82443036/5eb90ad1-b808-49e0-804f-f0d9bdf85cfd">
+<img width="652" alt="image" src="https://github.com/Distant22/Ai-journey-site/assets/82443036/5276a071-0105-4f94-8b22-3ffe74347367">
