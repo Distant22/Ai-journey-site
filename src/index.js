@@ -6,12 +6,17 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import Root from "./routes/root";
+import Search from "./routes/search";
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+  },
+  {
+    path: "/search",
+    element: <Search />,
   },
 ]);
 
