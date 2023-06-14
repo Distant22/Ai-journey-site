@@ -1,7 +1,7 @@
 # AI旅遊網站 — 前端
 <img width="960" alt="image" src="https://github.com/Distant22/Ai-journey-site/assets/82443036/54644400-cfe9-4a47-985b-2459c7d73a7e">
 
-**網址：https://nccudct-team6.netlify.app/**
+**網址：https://nccudct-team6.netlify.app/** \
 **技術：React.js / Firebase / TailwindCss / DaisyUI**
 ## **一應具全的一站式旅遊網站！**
 ### **查詢住宿**
