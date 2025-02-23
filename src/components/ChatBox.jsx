@@ -59,8 +59,8 @@ export default function ChatBox({searchMsg}) {
     try {
       console.log("Already sending! msg is ",msg)
       const response = await fetch('https://ai-journey-backend.onrender.com', {
-      // const response = await fetch('http://localhost:7777', {
         method: 'POST',
+        credentials: 'include',
         headers: {
           'Content-Type': 'application/json'
         },
