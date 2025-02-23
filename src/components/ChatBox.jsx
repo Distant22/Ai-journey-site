@@ -3,10 +3,8 @@ import bot from "../bot.png";
 import user from "../user.png";
 
 // ChatBox.jsx：AI旅遊小幫手，透過串接OpenAI API將Chat Model放進來我們的網站。
-// Model：text-davinci-003
 export default function ChatBox({searchMsg}) {
   const [currentText, setCurrentText] = useState("");
-  const [err, setErr] = useState(false);
   const starterMsg = [
     {
       name: '小幫手',
@@ -59,7 +57,9 @@ export default function ChatBox({searchMsg}) {
   // Call API
   async function lateMessage(msg) {
     try {
+      console.log("Already sending! msg is ",msg)
       const response = await fetch('https://ai-journey-backend.onrender.com', {
+      // const response = await fetch('http://localhost:7777', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -67,7 +67,6 @@ export default function ChatBox({searchMsg}) {
         body: JSON.stringify({ message: msg })
       });
 
-      console.log("Already sending!")
       
       if (!response.ok) {
         throw new Error('Request failed');
