@@ -23,6 +23,7 @@ export default function Journey({result}) {
       if(journeys.length === 0 && isLoading){
         try{
             const journeyList = await getJourney(result);
+            console.log("抓到了欸:",journeyList)
             setJourneys(journeyList);
             setIsLoading(false);
         } catch (FirebaseError){
@@ -37,7 +38,7 @@ export default function Journey({result}) {
 
 
   return (
-    <div className="bg-white">
+    <div className="bg-white h-full w-screen">
       {isLoading ? (
           <p className="text-lg p-8 font-bold text-gray-600">載入中...</p>
       ) : (
@@ -68,7 +69,7 @@ export default function Journey({result}) {
                         <div class="w-full h-[1.5rem] flex justify-end">
                           <p onClick={() => setMark(arr => [...arr, index])}>{ mark.includes(index) ? <BsFillBookmarkFill /> : <BsBookmark />}</p>
                         </div>
-                        <div className="text-xl">{journey.Name}</div>
+                        <div className="text-xl text-gray-800">{journey.Name}</div>
                         {/* <div className="text-sm text-gray-600">{journey.Add}</div> */}
                         <div className="line-clamp-2 mt-1 text-md text-gray-500">{journey.Toldescribe}</div>
                       </div>

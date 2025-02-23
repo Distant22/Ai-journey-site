@@ -51,7 +51,7 @@ export default function Root() {
   };
 
   return (
-    <div>
+    <div className="bg-white">
       {/* 產生搜尋結果 */}
       <TopBar onPageChange={handleNumChange} />
       { num === 0 ? (

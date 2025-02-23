@@ -74,6 +74,7 @@ export default function Hotel({result}) {
             } else {
               console.log("initial:",hotelList)
               hotelList = await getHotel(result);
+              console.log("變了欸好神奇:",hotelList)
             }
             setHotels(hotelList);
             setIsLoading(false);
@@ -89,7 +90,7 @@ export default function Hotel({result}) {
 
 
     return (
-      <div className="bg-white">
+      <div className="bg-white w-screen h-full">
         {isLoading ? (
             <p className="text-lg p-8 font-bold text-gray-600">載入中...</p>
         ) : (
