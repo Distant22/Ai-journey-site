@@ -38,7 +38,7 @@ export default function Root() {
     };
 
     return (
-      <>
+      <div className="bg-white">
         <TopBar onPageChange={handleNumChange} />
         { num === 0 ? (
           <div>
@@ -120,6 +120,6 @@ export default function Root() {
             )}
           </>
         )}
-      </>
+      </div>
     );
 }

@@ -66,6 +66,8 @@ export default function ChatBox({searchMsg}) {
         },
         body: JSON.stringify({ message: msg })
       });
+
+      console.log("Already sending!")
       
       if (!response.ok) {
         throw new Error('Request failed');
