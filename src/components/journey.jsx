@@ -37,7 +37,7 @@ export default function Journey({result}) {
 
 
   return (
-    <>
+    <div className="bg-white">
       {isLoading ? (
           <p className="text-lg p-8 font-bold text-gray-600">載入中...</p>
       ) : (
@@ -98,6 +98,6 @@ export default function Journey({result}) {
         ))}
       </ul>
       )}
-    </>
+    </div>
   );
 }

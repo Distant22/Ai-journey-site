@@ -89,7 +89,7 @@ export default function Hotel({result}) {
 
 
     return (
-      <>
+      <div className="bg-white">
         {isLoading ? (
             <p className="text-lg p-8 font-bold text-gray-600">載入中...</p>
         ) : (
@@ -243,5 +243,5 @@ export default function Hotel({result}) {
           }
         </ul>
         )}
-      </>
+      </div>
   );}
